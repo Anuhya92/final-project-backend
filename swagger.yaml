@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: Car Showroom
+  version: 1.0.0
+  description: Basic Swagger file to kickstart your API documentation
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+
+paths:
+  /cars:
+    get:
+      summary: Retrieve a list of available cars
+      tags:
+        - Cars
+      responses:
+        "200":
+          description: List of cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Car"
+
+    post:
+      summary: Create a new car
+      tags:
+        - Cars
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Car"
+      responses:
+        "201":
+          description: Car created successfully
+
+components:
+  schemas:
+    Car:
+      type: object
+      required:
+        - name
+        - variant
+        - power
+        - max_speed
+        - acceleration
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Temerario
+        variant:
+          type: string
+          example: Alleggerita Package
+        power:
+          type: string
+          example: 920CV
+        acceleration:
+          type: string
+          example: 0 - 100kph in 2.7sec
