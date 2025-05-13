@@ -36,6 +36,26 @@ paths:
       responses:
         "201":
           description: Car created successfully
+  /cars/{carId}/checkout:
+    post:
+      summary: Checkout a car
+      tags:
+        - Cars
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CheckoutRequest"
+      responses:
+        "200":
+          description: Checkout successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CheckoutResponse"
+        "400":
+          description: Invalid input
 
 components:
   schemas:
@@ -63,3 +83,66 @@ components:
         acceleration:
           type: string
           example: 0 - 100kph in 2.7sec
+    CheckoutRequest:
+      type: object
+      required:
+        - carId
+        - buyer
+        - payment
+      properties:
+        carId:
+          type: string
+          example: "car_001"
+        buyer:
+          $ref: "#/components/schemas/Buyer"
+        payment:
+          $ref: "#/components/schemas/Payment"
+    Buyer:
+      type: object
+      required:
+        - name
+        - email
+        - address
+      properties:
+        name:
+          type: string
+          example: "Alice Smith"
+        email:
+          type: string
+          format: email
+          example: "alice@example.com"
+        address:
+          type: string
+          example: "123 Electric Ave, San Francisco, CA"
+
+    Payment:
+      type: object
+      required:
+        - method
+        - cardNumber
+        - expiry
+        - cvv
+      properties:
+        method:
+          type: string
+          enum: [card, paypal]
+          example: "card"
+        cardNumber:
+          type: string
+          example: "4111 1111 1111 1111"
+        expiry:
+          type: string
+          example: "12/25"
+        cvv:
+          type: string
+          example: "123"
+
+    CheckoutResponse:
+      type: object
+      properties:
+        orderId:
+          type: string
+          example: "order_789"
+        message:
+          type: string
+          example: "Order placed successfully."
