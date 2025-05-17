@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./About.css"; 
 
 const About = () => {
   const [aboutData, setAboutData] = useState<any | null>(null);
@@ -20,16 +21,25 @@ const About = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>About Us</h1>
+    <div
+      style={{
+        maxWidth: "600px",
+        margin: "0 auto",
+        padding: "40px 20px",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <h1 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "20px" }}>
+        About Us
+      </h1>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {!aboutData && !error && <p>Loading...</p>}
+      {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
+      {!aboutData && !error && <p style={{ textAlign: "center" }}>Loading...</p>}
 
       {aboutData && (
-        <div>
-          <h2>{aboutData.title}</h2>
-          <p>{aboutData.description}</p>
+        <div style={{ lineHeight: "1.6", fontSize: "1.1rem" }}>
+          <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>{aboutData.title}</h2>
+          <p style={{ whiteSpace: "pre-line", fontSize: "16px", }}>{aboutData.description}</p>
         </div>
       )}
     </div>
