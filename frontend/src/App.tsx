@@ -1,26 +1,31 @@
 import React from 'react';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
-import Footer from './components/Footer';
+
 import Landing from './pages/Landing';
 import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Footer from './components/Footer';
 
 
 
 const App: React.FC = () => {
-  return (
-    <BrowserRouter>
-    <div>
-      <About />
-      <Landing />
-      <Footer />
-      <Navbar />
+ 
+    return (
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-      
-    </div>
-    </BrowserRouter>
-  );
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    );
 };
 
 export default App;
