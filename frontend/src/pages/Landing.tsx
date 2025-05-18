@@ -4,7 +4,7 @@ const Landing: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
       <img
-        src="/option3.jpg"
+        src="/option1.jpg"
         alt="Landing"
         className="w-48 h-48 rounded-full object-cover shadow-lg mb-8"
       />
