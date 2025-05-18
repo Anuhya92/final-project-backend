@@ -1,19 +1,35 @@
-import React from 'react';
-
 const Landing: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
-      <img
-        src="/option1.jpg"
-        alt="Landing"
-        className="w-48 h-48 rounded-full object-cover shadow-lg mb-8"
-      />
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 text-center">
-        Welcome to Our Project
-      </h1>
-      <p className="text-lg sm:text-xl md:text-2xl text-alternate text-center">
-        This is the landing page.
-      </p>
+      
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 my-8">
+        {/* L1: Bestselling car */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/L1.jpg"
+            alt="Bestselling Car"
+            className="w-64 h-40 object-cover rounded-lg shadow-lg"
+          />
+          <span className="mt-2 text-lg font-semibold text-primary">
+            Bestselling car for last 6 months
+          </span>
+        </div>
+        {/* L2: New arrival */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/l2.jpg"
+            alt="New Arrival Car"
+            className="w-64 h-40 object-cover rounded-lg shadow-lg"
+          />
+          <a
+            href="#"
+            className="mt-2 text-lg font-semibold text-alternate underline hover:text-secondary"
+          >
+            Our new arrival car (Go to webshop)
+          </a>
+        </div>
+      </div>
+      {/* ...rest of your landing page... */}
     </div>
   );
 };
