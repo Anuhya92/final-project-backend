@@ -1,6 +1,20 @@
+import { useUser } from '../context/UserContext';
+
 const Landing: React.FC = () => {
+  const { user, isLoggedIn } = useUser();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
+      {isLoggedIn && (
+        <div className="w-full max-w-4xl mb-8 p-4 bg-primary/10 rounded-lg shadow-lg text-center">
+          <h2 className="text-2xl font-bold text-primary mb-2">
+            Welcome back, {user?.name}! 👋
+          </h2>
+          <p className="text-gray-600">
+            We're glad to see you again. Check out our latest cars below!
+          </p>
+        </div>
+      )}
       
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 my-12">
         {/* L1: Bestselling car section */}
