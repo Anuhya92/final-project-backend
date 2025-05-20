@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';
-
 import AboutUs from "./pages/AboutUs";
 import AboutSection from "./pages/AboutSection";
 
