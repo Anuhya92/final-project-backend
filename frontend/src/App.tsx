@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from './context/UserContext';
@@ -9,9 +8,10 @@ import Footer from './components/Footer';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import About from "./pages/About";
+import AboutUs from "./pages/AboutUs";
+import AboutSection from "./pages/AboutSection";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <UserProvider>
       <Router>
@@ -20,7 +20,8 @@ const App: React.FC = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about/:section" element={<AboutSection />} />
         </Routes>
         <Footer />
       </Router>
