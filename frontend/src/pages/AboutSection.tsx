@@ -9,7 +9,7 @@ const AboutSection = () => {
     fetch("http://localhost:5000/api/about")
       .then((res) => res.json())
       .then(setData);
-  }, []);
+  }, []); 
 
   const found = data?.sections?.find((s: any) =>
     s.link.toLowerCase().includes(section?.toLowerCase())

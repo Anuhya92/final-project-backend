@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -20,11 +19,8 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
         <Route path="/about" element={<AboutUs />} />
         <Route path="/about/:section" element={<AboutSection />} />
-
-        <Route path="*" element={<div>Page not found</div>} />
       </Routes>
       <Footer />
     </Router>
