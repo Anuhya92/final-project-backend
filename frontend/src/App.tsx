@@ -1,31 +1,30 @@
-import React from 'react';
 import './index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/About';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Landing from './pages/Landing';
 import Navbar from './components/Navbar';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import Footer from './components/Footer';
 
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
+import AboutUs from "./pages/AboutUs";
+import AboutSection from "./pages/AboutSection";
 
-const App: React.FC = () => {
- 
-    return (
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    );
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about/:section" element={<AboutSection />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 };
 
 export default App;
