@@ -1,11 +1,16 @@
-import React from 'react';
-import About from './pages/About';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import AboutSection from "./pages/AboutSection";
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div>
-      <About />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about/:section" element={<AboutSection />} />
+        <Route path="*" element={<div>Page not found</div>} />
+      </Routes>
+    </Router>
   );
 };
 
