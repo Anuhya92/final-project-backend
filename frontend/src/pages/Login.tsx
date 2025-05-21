@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { useUser } from '../context/UserContext';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const { setUser } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,9 +20,13 @@ const Login: React.FC = () => {
         password,
       });
 
-      // Save token and redirect
+      // Save token and user data
       localStorage.setItem('token', res.data.token);
-      navigate('/dashboard'); // You can change this
+      setUser({
+        name: res.data.name,
+        email: res.data.email
+      });
+      navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
     }
