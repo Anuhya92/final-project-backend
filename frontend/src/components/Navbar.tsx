@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       />
 
       {/* Links */}
-      <div className="flex items-center space-x-8 text-lg text-yellow-400">
+      <div className="flex items-center space-x-8 text-lg" style={{ color: '#E5A000' }}>
         <Link to="/" className="hover:underline">Home</Link>
         <Link to="/login" className="hover:underline">Login</Link>
         <Link to="/register" className="hover:underline">Register</Link>
