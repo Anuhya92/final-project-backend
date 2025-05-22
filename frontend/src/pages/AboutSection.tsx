@@ -19,11 +19,19 @@ const AboutSection = () => {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "'Segoe UI', sans-serif" }}>
-      <h1 style={{ color: "#FACC15", fontSize: "1.5rem" }}>{selected.title}</h1>
-      <p style={{ whiteSpace: "pre-line", color: "#333", fontSize: "1.1rem", lineHeight: "1.6" }}>
-  {selected.content}
-</p>
-
+      <h1 style={{ color: "#FACC15", fontSize: "1.5rem" }}>
+        {selected.heading || selected.title}
+      </h1>
+      <p
+        style={{
+          whiteSpace: "pre-line",
+          color: "#333",
+          fontSize: "1.1rem",
+          lineHeight: "1.6",
+        }}
+      >
+        {selected.content}
+      </p>
     </div>
   );
 };
