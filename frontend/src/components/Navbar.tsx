@@ -59,6 +59,8 @@ const Navbar: React.FC = () => {
               >
                 Sustainability Work
               </Link>
+              <Link to="/about/service" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Service</Link>
+
               <Link
                 to="/about/contact"
                 onClick={() => setOpen(false)}

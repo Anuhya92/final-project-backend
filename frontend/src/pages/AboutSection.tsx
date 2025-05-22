@@ -23,6 +23,7 @@ const AboutSection = () => {
       <p style={{ whiteSpace: "pre-line", color: "#333", fontSize: "1.1rem", lineHeight: "1.6" }}>
   {selected.content}
 </p>
+
     </div>
   );
 };
