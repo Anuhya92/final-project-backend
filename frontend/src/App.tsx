@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Landing from "./pages/Landing";
+import WebshopPage from "./pages/Webshop";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AboutUs from "./pages/AboutUs";
@@ -19,6 +20,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/webshop" element={<WebshopPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about" element={<AboutUs />} />

@@ -14,10 +14,22 @@ const Navbar: React.FC = () => {
       />
 
       {/* Links */}
-      <div className="flex items-center space-x-8 text-lg" style={{ color: '#E5A000' }}>
-        <Link to="/" className="hover:underline">Home</Link>
-        <Link to="/login" className="hover:underline">Login</Link>
-        <Link to="/register" className="hover:underline">Register</Link>
+      <div
+        className="flex items-center space-x-8 text-lg"
+        style={{ color: "#E5A000" }}
+      >
+        <Link to="/" className="hover:underline">
+          Home
+        </Link>
+        <Link to="/webshop" className="hover:underline">
+          Webshop
+        </Link>
+        <Link to="/login" className="hover:underline">
+          Login
+        </Link>
+        <Link to="/register" className="hover:underline">
+          Register
+        </Link>
 
         {/* Dropdown for about us section*/}
         <div className="relative">
@@ -29,7 +41,9 @@ const Navbar: React.FC = () => {
               <Link to="/about" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Overview</Link>
               <Link to="/about/philosophy" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Our Philosophy</Link>
               <Link to="/about/sustainability" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Sustainability Work</Link>
+              <Link to="/about/service" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Service</Link>
               <Link to="/about/contact" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Contact Us</Link>
+              <Link to="/about/team" onClick={() => setOpen(false)} className="block px-2 py-1 hover:bg-yellow-400">Team Behind the App</Link>
             </div>
           )}
         </div>
@@ -39,7 +53,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
-
-
-
