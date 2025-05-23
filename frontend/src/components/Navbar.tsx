@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  // Close dropdown on outside click
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close dropdown on route change
+  
   useEffect(() => {
     setOpen(false);
   }, [location]);
@@ -41,9 +41,7 @@ const Navbar: React.FC = () => {
         <Link to="/webshop" className="hover:underline">Webshop</Link>
         <Link to="/login" className="hover:underline">Login</Link>
         <Link to="/register" className="hover:underline">Register</Link>
-
-        {/* Dropdown */}
-        <div className="relative" ref={dropdownRef}>
+      <div className="relative" ref={dropdownRef}>
           <button onClick={() => setOpen(!open)} className="hover:underline">
             About Us
           </button>
