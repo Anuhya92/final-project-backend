@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -15,10 +16,11 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        'http://localhost:5000/auth/login',
+        { email, password },
+        { withCredentials: true }
+      );
 
       // Save token and user data
       localStorage.setItem('token', res.data.token);

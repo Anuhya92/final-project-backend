@@ -1,17 +1,15 @@
 import express from "express";
-import About from "../models/About";
-
 import {
-  createAboutInfo ,
+  createAboutInfo,
   getAboutInfo,
-  deleteAboutInfo
+  deleteAboutInfo,
 } from "../controllers/aboutController";
+import { asyncHandler } from "../utils/asyncHandler";
 
 const router = express.Router();
 
-router.get("/", getAboutInfo); 
-router.post("/", createAboutInfo);
-router.delete("/", deleteAboutInfo);
-
+router.get("/", asyncHandler(getAboutInfo));
+router.post("/", asyncHandler(createAboutInfo));
+router.delete("/", asyncHandler(deleteAboutInfo));
 
 export default router;
