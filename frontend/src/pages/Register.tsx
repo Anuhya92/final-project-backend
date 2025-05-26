@@ -1,28 +1,31 @@
+
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
+  const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError(null);
+    setSuccess(false);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', {
-        name,
-        email,
-        password,
+      await axios.post('http://localhost:5000/auth/register', form, {
+        withCredentials: true,
       });
-
-      alert('Registration successful!');
-      navigate('/');
+      setSuccess(true);
+      setTimeout(() => navigate('/login'), 1500);
     } catch (err: any) {
+      console.error('❌ Registration error:', err);
       setError(err.response?.data?.message || 'Registration failed');
     }
   };
@@ -32,34 +35,37 @@ const Register: React.FC = () => {
       <h2>Register</h2>
       <form onSubmit={handleRegister} style={styles.form}>
         <input
-          type="text"
+          name="name"
           placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={form.name}
+          onChange={handleChange}
           required
           style={styles.input}
         />
         <input
           type="email"
+          name="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          onChange={handleChange}
           required
           style={styles.input}
         />
         <input
           type="password"
+          name="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={form.password}
+          onChange={handleChange}
           required
           style={styles.input}
         />
-        {error && <p style={styles.error}>{error}</p>}
         <button type="submit" style={styles.button}>Register</button>
       </form>
+      {success && <p style={{ color: 'green' }}>🎉 Registration successful! Redirecting...</p>}
+      {error && <p style={styles.error}>{error}</p>}
       <p>
-        Already have an account? <Link to="/">Login</Link>
+        Already have an account? <Link to="/login">Login here</Link>
       </p>
     </div>
   );
