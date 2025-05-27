@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Adjust for your frontend
+  origin: 'http://localhost:5173', 
   credentials: true,
 }));
 app.use(express.json());
@@ -26,16 +26,16 @@ app.use('/auth', authRoutes);
 app.use('/api/about', aboutRouter);
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://root:example@localhost:27017/mynewdatabase?authSource=admin';
+const MONGO_URI = process.env.MONGO_URI || '';
 
 mongoose.connect(MONGO_URI)
   .then(() => {
-    logger.info('✅ Connected to MongoDB');
+    logger.info('Connected to MongoDB');
     app.listen(PORT, () => {
-      logger.info(`🚀 Server running on http://localhost:${PORT}`);
+      logger.info(`Server running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
-    logger.error('❌ MongoDB connection failed:', err.message);
+    logger.error(' MongoDB connection failed:', err.message);
     process.exit(1);
   });
