@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: string;
@@ -43,6 +44,12 @@ const products: Product[] = [
 ];
 
 const WebshopPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleBuyClick = () => {
+    navigate("/checkout");
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Our Cars</h1>
@@ -63,8 +70,11 @@ const WebshopPage: React.FC = () => {
                 {product.description}
               </p>
               <p className="text-lg font-bold">{product.price}</p>
-              <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-                Add to Cart
+              <button
+                onClick={handleBuyClick}
+                className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+              >
+                Buy
               </button>
             </div>
           </div>
