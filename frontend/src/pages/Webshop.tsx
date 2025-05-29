@@ -47,8 +47,8 @@ const products: Product[] = [
 const WebshopPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleBuyClick = () => {
-    navigate("/checkout");
+  const handleBuyClick = (product: Product) => {
+    navigate("/checkout", { state: { product } });
   };
 
   return (
@@ -71,9 +71,9 @@ const WebshopPage: React.FC = () => {
                   <p className="text-gray-600 text-sm mb-2">
                     {product.description}
                   </p>
-                  <p className="text-lg font-bold">{product.price}</p>
+                  <p className="text-lg font-bold">{product.price} kr</p>
                   <button
-                    onClick={handleBuyClick}
+                    onClick={() => handleBuyClick(product)}
                     className="mt-4 w-full bg-alternate text-white py-2 rounded-lg hover:bg-primary"
                   >
                     Buy
