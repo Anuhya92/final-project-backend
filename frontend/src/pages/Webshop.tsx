@@ -12,34 +12,35 @@ interface Product {
 const products: Product[] = [
   {
     id: "1",
-    title: "Product 1",
-    description: "This is the first product.",
+    title: "Lamborghini Urus",
+    description: "A declaration of freedom",
     imageUrl:
-      "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/s2.jpg",
-    price: "$19.99",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Lamborghini/Urus/10635/1724844423793/front-left-side-47.jpg",
+    price: "3 999 999 kr",
   },
   {
     id: "2",
-    title: "Product 2",
-    description: "This is the second product.",
-    imageUrl: "https://storage.googleapis.com/pod_public/1300/176804.jpg",
-    price: "$29.99",
+    title: "Lamborghini Revuleto",
+    description: "Harness the power of hybridization",
+    imageUrl:
+      "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/s2.jpg",
+    price: "2 599 999 kr",
   },
   {
     id: "3",
-    title: "Product 3",
-    description: "This is the third product.",
+    title: "Lamborghini Temerario",
+    description: "A new frontier of driving emotions",
     imageUrl:
-      "https://image.nordjyske.dk/users/nordjyske/images/81114263.jpg?t[strip]=true&t[resize][width]=5000&t[resize][height]=3333&accessToken=6dea84437cb43fc29f0db3371da30c817f426a4f706db4aec7a7dc2de8d047cf",
-    price: "$39.99",
+      "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/img-right.jpg",
+    price: "1 999 999 kr",
   },
   {
     id: "4",
-    title: "Product 4",
-    description: "This is the fourth product.",
+    title: "Lamborghini Huracán",
+    description: "From our past, we've learned perfection",
     imageUrl:
-      "https://www.affarsvarlden.se/wp-content/uploads/2023/03/c200-lamborghini-sian-rds-final-150-1594215316.jpg",
-    price: "$49.99",
+      "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/img-left.jpg",
+    price: "7 500 000 kr",
   },
 ];
 
@@ -72,7 +73,7 @@ const WebshopPage: React.FC = () => {
               <p className="text-lg font-bold">{product.price}</p>
               <button
                 onClick={handleBuyClick}
-                className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                className="mt-4 w-full bg-alternate text-white py-2 rounded-lg hover:bg-primary"
               >
                 Buy
               </button>
