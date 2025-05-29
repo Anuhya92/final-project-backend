@@ -52,35 +52,38 @@ const WebshopPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Our Cars</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-          >
-            <img
-              src={product.imageUrl}
-              alt={product.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{product.title}</h2>
-              <p className="text-gray-600 text-sm mb-2">
-                {product.description}
-              </p>
-              <p className="text-lg font-bold">{product.price}</p>
-              <button
-                onClick={handleBuyClick}
-                className="mt-4 w-full bg-alternate text-white py-2 rounded-lg hover:bg-primary"
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow flex items-center justify-center">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                Buy
-              </button>
-            </div>
+                <img
+                  src={product.imageUrl}
+                  alt={product.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold">{product.title}</h2>
+                  <p className="text-gray-600 text-sm mb-2">
+                    {product.description}
+                  </p>
+                  <p className="text-lg font-bold">{product.price}</p>
+                  <button
+                    onClick={handleBuyClick}
+                    className="mt-4 w-full bg-alternate text-white py-2 rounded-lg hover:bg-primary"
+                  >
+                    Buy
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </main>
     </div>
   );
 };
