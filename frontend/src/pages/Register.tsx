@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -60,10 +59,15 @@ const Register: React.FC = () => {
           required
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>Register</button>
+        {error && <p style={styles.error}>{error}</p>}
+        <button
+          type="submit"
+          className="w-full bg-[#1a1a1a] text-white rounded-lg py-3 text-base font-medium mt-4 hover:bg-[#333] transition"
+        >
+          Register
+        </button>
       </form>
       {success && <p style={{ color: 'green' }}>🎉 Registration successful! Redirecting...</p>}
-      {error && <p style={styles.error}>{error}</p>}
       <p>
         Already have an account? <Link to="/login">Login here</Link>
       </p>
