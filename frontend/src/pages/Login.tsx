@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -55,7 +54,12 @@ const Login: React.FC = () => {
           style={styles.input}
         />
         {error && <p style={styles.error}>{error}</p>}
-        <button type="submit" style={styles.button}>Login</button>
+        <button
+          type="submit"
+          className="w-full bg-[#1a1a1a] text-white rounded-lg py-3 text-base font-medium mt-4 hover:bg-[#333] transition"
+        >
+          Sign In
+        </button>
       </form>
       <p>
         Don't have an account? <Link to="/register">Register here</Link>
