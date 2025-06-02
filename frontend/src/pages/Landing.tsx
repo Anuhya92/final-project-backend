@@ -7,7 +7,7 @@ const Landing: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#D6D6D6] px-4">
       {isLoggedIn && (
-        <div className="w-full max-w-4xl mb-8 p-4 bg-primary/10 rounded-lg shadow-md text-center">
+        <div className="w-full max-w-4xl mb-8 p-4 bg-yellow-200 rounded-lg shadow-md text-center">
           <h2 className="text-2xl font-bold text-primary mb-2">
             Welcome back, {user?.name}! 👋
           </h2>
