@@ -1,12 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useUser } from '../context/UserContext';
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { isLoggedIn, setUser } = useUser();
+  const navigate = useNavigate();
 
-  
+  const handleLogout = () => {
+    setUser(null);
+    navigate('/login');
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -41,7 +48,7 @@ const Navbar: React.FC = () => {
         <Link to="/webshop" className="hover:underline">Webshop</Link>
         <Link to="/login" className="hover:underline">Login</Link>
         <Link to="/register" className="hover:underline">Register</Link>
-      <div className="relative" ref={dropdownRef}>
+        <div className="relative" ref={dropdownRef}>
           <button onClick={() => setOpen(!open)} className="hover:underline">
             About Us
           </button>
@@ -55,6 +62,14 @@ const Navbar: React.FC = () => {
             </div>
           )}
         </div>
+        {isLoggedIn && (
+          <button
+            onClick={handleLogout}
+            className="ml-4 px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-500 transition"
+          >
+            Logout
+          </button>
+        )}
       </div>
     </nav>
   );
