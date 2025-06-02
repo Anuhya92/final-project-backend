@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Custom styles below */
-body {
-  background: "#a89f91";
+html, body, #root {
+  background: #D6D6D6 !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }

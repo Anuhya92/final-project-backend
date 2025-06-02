@@ -4,9 +4,9 @@ const Landing: React.FC = () => {
   const { user, isLoggedIn } = useUser();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#D6D6D6] px-4">
       {isLoggedIn && (
-        <div className="w-full max-w-4xl mb-8 p-4 bg-primary/10 rounded-lg shadow-lg text-center">
+        <div className="w-full max-w-4xl mb-8 p-4 bg-primary/10 rounded-lg shadow-md text-center">
           <h2 className="text-2xl font-bold text-primary mb-2">
             Welcome back, {user?.name}! 👋
           </h2>
@@ -19,7 +19,7 @@ const Landing: React.FC = () => {
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 my-12">
         {/* L1: Bestselling car section */}
         <div className="flex flex-col items-center group">
-          <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-primary/50">
+          <div className="relative overflow-hidden rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-primary/50">
             <img
               src="/L1.jpg"
               alt="Bestselling Car"
@@ -33,7 +33,7 @@ const Landing: React.FC = () => {
         </div>
         {/* L2: New arrival car section */}
         <div className="flex flex-col items-center group">
-          <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-primary/50">
+          <div className="relative overflow-hidden rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-primary/50">
             <img
               src="/l2.jpg"
               alt="New Arrival Car"
