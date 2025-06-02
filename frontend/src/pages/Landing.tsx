@@ -1,4 +1,5 @@
 import { useUser } from '../context/UserContext';
+import { Link } from 'react-router-dom';
 
 const Landing: React.FC = () => {
   const { user, isLoggedIn } = useUser();
@@ -41,12 +42,12 @@ const Landing: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <a
-            href="#"
+          <Link
+            to="/webshop"
             className="mt-4 text-xl font-semibold text-alternate hover:text-secondary transition-colors duration-300"
           >
             Our new arrival car (Go to webshop)
-          </a>
+          </Link>
         </div>
       </div>
       {/* ...rest of the page... */}
