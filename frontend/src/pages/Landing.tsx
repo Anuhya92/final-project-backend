@@ -7,12 +7,12 @@ const Landing: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#D6D6D6] px-4">
       {isLoggedIn && (
-        <div className="w-full max-w-4xl mb-8 p-4 bg-yellow-200 rounded-lg shadow-md text-center">
-          <h2 className="text-2xl font-bold text-primary mb-2">
-            Welcome back, {user?.name}! 👋
+        <div className="w-full max-w-4xl mb-8 p-6 bg-yellow-100 border-l-8 border-yellow-400 rounded-xl shadow text-center flex flex-col items-center">
+          <h2 className="text-2xl font-extrabold text-yellow-900 mb-2 flex items-center justify-center gap-2">
+            <span>Welcome back{user?.name ? `, ${user.name}` : ""}</span> <span>👋</span>
           </h2>
-          <p className="text-gray-600">
-            We're glad to see you again. Check out our latest cars below!
+          <p className="text-gray-700 text-base">
+            We're glad to see you again. <span className="italic text-yellow-700">Check out our latest cars below!</span>
           </p>
         </div>
       )}
