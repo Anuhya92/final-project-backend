@@ -19,7 +19,7 @@ const AboutSection = () => {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "'Segoe UI', sans-serif" }}>
-      <h1 style={{ color: "#FACC15", fontSize: "1.5rem" }}>
+      <h1 style={{ color: "#B8860B ", fontSize: "1.5rem", fontWeight: "bold"}}>
         {selected.heading || selected.title}
       </h1>
       <p
