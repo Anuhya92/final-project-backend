@@ -16,19 +16,23 @@ import Checkout from "./pages/Checkout";
 const App = () => {
   return (
     <UserProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/webshop" element={<WebshopPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/about/:section" element={<AboutSection />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <div className="min-h-screen flex flex-col">
+        <Router>
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/webshop" element={<WebshopPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/about/:section" element={<AboutSection />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </UserProvider>
   );
 };

@@ -52,7 +52,7 @@ const WebshopPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
       <main className="flex-grow flex items-center justify-center">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
