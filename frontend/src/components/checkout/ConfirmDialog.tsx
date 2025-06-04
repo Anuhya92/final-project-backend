@@ -13,8 +13,8 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ isOpen, onCancel }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+      <div className="bg-primary rounded-2xl shadow-xl p-6 w-full max-w-md">
+        <h2 className="text-xl font-semibold text-yellow-600 mb-2">
           Remove item
         </h2>
         <p className="text-gray-600 mb-6">Are you sure to remove the item ?</p>

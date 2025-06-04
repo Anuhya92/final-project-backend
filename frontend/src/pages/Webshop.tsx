@@ -16,7 +16,7 @@ const products: Product[] = [
     description: "A declaration of freedom",
     imageUrl:
       "https://stimg.cardekho.com/images/carexteriorimages/930x620/Lamborghini/Urus/10635/1724844423793/front-left-side-47.jpg",
-    price: "3 999 999 kr",
+    price: "3 999 999",
   },
   {
     id: "2",
@@ -24,7 +24,7 @@ const products: Product[] = [
     description: "Harness the power of hybridization",
     imageUrl:
       "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/s2.jpg",
-    price: "2 599 999 kr",
+    price: "2 599 999",
   },
   {
     id: "3",
@@ -32,7 +32,7 @@ const products: Product[] = [
     description: "A new frontier of driving emotions",
     imageUrl:
       "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/img-right.jpg",
-    price: "1 999 999 kr",
+    price: "1 999 999 ",
   },
   {
     id: "4",
@@ -40,7 +40,7 @@ const products: Product[] = [
     description: "From our past, we've learned perfection",
     imageUrl:
       "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/2025/img-left.jpg",
-    price: "7 500 000 kr",
+    price: "7 500 000 ",
   },
 ];
 

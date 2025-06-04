@@ -1,7 +1,7 @@
 .footer {
   background-color: #1a1a1a;
   color: #ffffff;
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin-top: auto;
 }
 
@@ -50,12 +50,12 @@
   .footer-content {
     padding: 0 0.5rem;
   }
-  
+
   .social-links {
     gap: 1rem;
   }
-  
+
   .social-icon {
     font-size: 1.2rem;
   }
-} 
+}

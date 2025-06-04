@@ -6,7 +6,6 @@ type CartItemProps = {
   image: string;
   description: string;
   price: number;
-  onRemove: () => void;
 };
 
 export default function CartItem({
@@ -14,9 +13,12 @@ export default function CartItem({
   image,
   price,
   description,
-  onRemove,
 }: CartItemProps) {
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+
+  const onRemove = () => {
+    setShowConfirmDialog(false);
+  };
 
   return (
     <div className="flex items-start p-4 border-b">
