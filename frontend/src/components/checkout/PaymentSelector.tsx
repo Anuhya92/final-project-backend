@@ -23,12 +23,6 @@ export default function PaymentSelector({
       icon: <Wallet size={20} />,
       description: "Pay easy with Paypal",
     },
-    {
-      id: "swish",
-      name: "Swish",
-      icon: <Wallet size={20} />,
-      description: "Pay directly with Swish",
-    },
   ];
 
   return (
@@ -86,7 +80,7 @@ export default function PaymentSelector({
                     className="block text-sm mb-1"
                     style={{ color: Colors.neutral }}
                   >
-                    Kortnummer
+                    Card Number
                   </label>
                   <input
                     type="text"
@@ -100,11 +94,11 @@ export default function PaymentSelector({
                     className="block text-sm mb-1"
                     style={{ color: Colors.neutral }}
                   >
-                    Utgångsdatum
+                    Expiry date
                   </label>
                   <input
                     type="text"
-                    placeholder="MM/ÅÅ"
+                    placeholder="MM/YY"
                     className="w-full p-2 border rounded"
                     style={{ borderColor: Colors.neutral + "40" }}
                   />
@@ -114,7 +108,7 @@ export default function PaymentSelector({
                     className="block text-sm mb-1"
                     style={{ color: Colors.neutral }}
                   >
-                    CVC
+                    CVV
                   </label>
                   <input
                     type="text"
