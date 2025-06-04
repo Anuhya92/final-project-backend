@@ -32,3 +32,15 @@ starting up with Landing-page structure
 
 Philip
 Began to design our wireframes using Figma and making sure we got a good color schema.
+
+Kusum
+
+Frontend Development
+I  focused on building the user interface
+Designed pages for login and registration.
+Created forms to collect user input (name, email, password).
+Handled form validation and connected the forms to the backend using Axios.
+Creating folder and file structure for fronted.
+Did team meeting.
+Updated trello.    
+ Implementing the client side login.
