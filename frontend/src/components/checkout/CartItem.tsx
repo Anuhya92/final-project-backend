@@ -1,9 +1,11 @@
+import { useState } from "react";
+import ConfirmDialog from "./ConfirmDialog";
+
 type CartItemProps = {
   title: string;
   image: string;
   description: string;
   price: number;
-  onRemove: () => void;
 };
 
 export default function CartItem({
@@ -11,8 +13,13 @@ export default function CartItem({
   image,
   price,
   description,
-  onRemove,
 }: CartItemProps) {
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+
+  const onRemove = () => {
+    setShowConfirmDialog(false);
+  };
+
   return (
     <div className="flex items-start p-4 border-b">
       <div className="flex-shrink-0 w-24 h-24 bg-gray-100 p-2">
@@ -60,13 +67,14 @@ export default function CartItem({
           </div>
 
           <button
-            onClick={onRemove}
+            onClick={() => setShowConfirmDialog(true)}
             className="text-blue-600 cursor-pointer hover:underline text-sm flex items-center "
           >
             Remove
           </button>
         </div>
       </div>
+      <ConfirmDialog onCancel={onRemove} isOpen={showConfirmDialog} />
     </div>
   );
 }

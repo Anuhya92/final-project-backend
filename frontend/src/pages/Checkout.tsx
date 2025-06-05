@@ -33,10 +33,6 @@ export default function Checkout() {
   const [selectedAddress, setSelectedAddress] = useState("address1");
   const [selectedPayment, setSelectedPayment] = useState("card");
 
-  const handleRemoveItem = () => {
-    console.log("Item removed");
-  };
-
   return (
     <div
       className="max-w-6xl mx-auto px-4 py-8"
@@ -54,7 +50,6 @@ export default function Checkout() {
               title={product.title}
               description={product.description}
               price={product.price}
-              onRemove={handleRemoveItem}
             />
           </div>
           <div className="w-full lg:w-1/3">
