@@ -13,8 +13,8 @@ const Navbar: React.FC = () => {
   const handleAuth = (isUserLoggedOut: boolean) => {
     if (isUserLoggedOut) {
       setUser(null);
-      navigate("/login");
     }
+    navigate("/login");
   };
 
   useEffect(() => {

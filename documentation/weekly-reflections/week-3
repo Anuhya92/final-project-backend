@@ -41,3 +41,10 @@ Implemented backend logic for server side code.
 I worked on connecting the frontend and backend smoothly
 Did meeting with my team and updated about my work.
 
+Anuhya:
+
+Completed tasks:
+Checkout component is done and started actual implementation of address endpoint for delivering the car.
+
+Challenges:
+Not able to connect to MongoDB url

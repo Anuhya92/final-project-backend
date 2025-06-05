@@ -1,0 +1,7 @@
+Anuhya:
+
+Completed tasks:
+Completed address endpoint in BE and now we can add a new address to a customer specifying the type of address as well.
+
+Challenges:
+Some problem with connecting to MongoDB url on cloud, but i have used my local MongoDB while developing the functionality.
